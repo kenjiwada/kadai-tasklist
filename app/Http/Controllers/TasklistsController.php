@@ -61,7 +61,7 @@ class TasklistsController extends Controller
      */
     public function show($id)
     {
-        $message = Message::find($id);
+        $tasklist = TaskList::find($id);
         
         return view('tasklists.show', [
             'tasklist' => $tasklist,
