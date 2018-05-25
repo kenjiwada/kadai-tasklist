@@ -48,7 +48,7 @@ class TasklistsController extends Controller
     public function store(Request $request)
     {
         $tasklist = new TaskList;
-        $tasklist->content = $request->content;
+        $tasklist->content = $request   ->content;
         $tasklist->save();
         
         return redirect('/');
@@ -93,7 +93,11 @@ class TasklistsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $tasklist = TaskList::find($id);
+        $tasklist->content = $request->content;
+        $tasklist->save();
+        
+        return redirect('/');
     }
 
     /**
@@ -104,6 +108,9 @@ class TasklistsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $tasklist = TaskList::find($id);
+        $tasklist->delete();
+        
+        return redirect('/');
     }
 }
