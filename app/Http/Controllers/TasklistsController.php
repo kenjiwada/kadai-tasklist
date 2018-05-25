@@ -15,12 +15,13 @@ class TasklistsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         $tasklists = TaskList::all();
         
         return view('tasklists.index', [
-                'tasklists' => $tasklists,
+            'tasklists' => $tasklists,
         ]);
     }
 
@@ -47,7 +48,7 @@ class TasklistsController extends Controller
     public function store(Request $request)
     {
         $tasklist = new TaskList;
-        $tasklist->content = $tasklist->content;
+        $tasklist->content = $request->content;
         $tasklist->save();
         
         return redirect('/');
