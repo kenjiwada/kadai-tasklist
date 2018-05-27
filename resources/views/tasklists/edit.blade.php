@@ -5,7 +5,7 @@
     <h1>id: {{ $tasklist->id }}のタスク編集ページ</h1>
 
 <div class="row">
-    <div class="col-x-6">
+    <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8 col-xs-12">
         {!! Form::model($tasklist, ['route' => ['tasklists.update', $tasklist->id], 'method' => 'put']) !!}
             <div class="form-group">
                 {!! Form::label('status','ステータス:') !!}
